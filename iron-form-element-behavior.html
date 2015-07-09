@@ -66,7 +66,7 @@ Enables a custom element to be included in an `iron-form`.
     },
 
     detached: function() {
-      if (this._parentForm) {
+      if (this._parentForm && typeof this._parentForm.fire === 'function') {
         this._parentForm.fire('iron-form-element-unregister', {target: this});
       }
     }
