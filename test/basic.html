@@ -22,23 +22,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body>
 
-  <test-fixture id="basic">
+  <test-fixture id="form">
     <template>
-      <form is="simple-form"></form>
+      <simple-form></simple-form>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="element">
+    <template>
+      <simple-element>
+        <input>
+      </simple-element>
     </template>
   </test-fixture>
 
   <script>
     suite('basic', function() {
-      var form;
+      var form, element;
 
       setup(function() {
-        form = fixture('basic');
+        form = fixture('form');
+        element = fixture('element');
       });
 
       test('elements fire an event when attached', function(done) {
-        var element = document.createElement('input', 'simple-element');
-
         var handler = sinon.spy();
         form.addEventListener('iron-form-element-register', handler);
 
@@ -50,7 +57,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       });
 
       test('elements fire an event when detached', function(done) {
-        var element = document.createElement('input', 'simple-element');
         form.appendChild(element);
         element._parentForm = form;
 
