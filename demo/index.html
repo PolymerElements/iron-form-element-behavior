@@ -33,13 +33,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <div class="vertical-section-container centered">
       <div class="vertical-section">
-        <simple-form id="form">
-          Element with iron-form-element-behavior <simple-element><input type="text" name="one" value="one"></simple-element>
+        <form is="simple-form" id="form">
+          Element with iron-form-element-behavior <input is="simple-element" type="text" name="one" value="one">
           <br>
           Element without iron-form-element-behavior <input type="text" name="two" value="two">
           <br>
-          Element with iron-form-element-behavior <simple-element><input type="text" name="three" value="three"></simple-element>
-        </simple-form>
+          Element with iron-form-element-behavior <input is="simple-element" type="text" name="three" value="three">
+        </form>
 
         <h4>Elements tracked by the form: <button onclick="update()">Update</button> </h4>
 
@@ -55,7 +55,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         document.getElementById('output').innerHTML = '';
         for (var i = 0; i < elements.length; i++) {
           var li = document.createElement('li');
-          var text = document.createTextNode(elements[i].firstElementChild.value);
+          var text = document.createTextNode(elements[i].value);
           li.appendChild(text);
           output.appendChild(li);
         }

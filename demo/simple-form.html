@@ -9,19 +9,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../../polymer/polymer.html">
 
-<dom-module id="simple-form">
-  <template>
-    <form id="form">
-      <slot></slot>
-    </form>
-  </template>
-</dom-module>
-
 <script>
 
   Polymer({
 
     is: 'simple-form',
+
+    extends: 'form',
 
     properties: {
       formElements: {
