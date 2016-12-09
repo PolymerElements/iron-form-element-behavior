@@ -21,5 +21,5 @@ _[Demo and API docs](https://elements.polymer-project.org/elements/iron-form-ele
 
   Polymer.IronFormElementBehavior enables a custom element to be included
   in an `iron-form`.
-
-
+  If your form element is used with Polymer 2.0, it doesn't need to implement
+  `Polymer.IronFormElementBehavior` as `iron-form` won't rely on it.
