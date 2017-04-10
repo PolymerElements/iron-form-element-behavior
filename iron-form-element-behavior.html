@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   @demo demo/index.html
   @polymerBehavior
   */
-  Polymer.IronFormElementBehavior = Polymer.Element ? {} : {
+  Polymer.IronFormElementBehavior = Polymer.version[0] !== '1' ? {} : {
 
     properties: {
       /**

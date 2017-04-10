@@ -9,6 +9,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <html>
+
 <head>
   <title>iron-form-element-behavior</title>
 
@@ -20,6 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="simple-element.html">
   <link rel="import" href="simple-form.html">
 </head>
+
 <body>
 
   <test-fixture id="basic">
@@ -29,53 +31,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </test-fixture>
 
   <script>
-HTMLImports.whenReady(function() {
+    window.addEventListener('WebComponentsReady', function() {
 
-    if (Polymer.Element) {
-      test('Empty implementation in Polymer 2.0', function() {
-        assert.deepEqual(Polymer.IronFormElementBehavior, {});
+      if (Polymer.version[0] !== '1') {
+        test('Empty implementation in Polymer 2.0', function() {
+          assert.deepEqual(Polymer.IronFormElementBehavior, {});
+        });
+        return;
+      }
+
+      suite('basic', function() {
+        var form;
+
+        setup(function() {
+          form = fixture('basic');
+        });
+
+        test('elements fire an event when attached', function(done) {
+          var element = document.createElement('input', 'simple-element');
+
+          var handler = sinon.spy();
+          form.addEventListener('iron-form-element-register', handler);
+
+          form.appendChild(element);
+          Polymer.Base.async(function() {
+            expect(handler.callCount).to.be.equal(1);
+            done();
+          }, 1);
+        });
+
+        test('elements fire an event when detached', function(done) {
+          var element = document.createElement('input', 'simple-element');
+          form.appendChild(element);
+          element._parentForm = form;
+
+          var handler = sinon.spy();
+          form.addEventListener('iron-form-element-unregister', handler);
+
+          form.removeChild(element);
+          Polymer.Base.async(function() {
+            expect(handler.callCount).to.be.equal(1);
+            done();
+          }, 1);
+        });
       });
-      return;
-    }
 
-    suite('basic', function() {
-      var form;
-
-      setup(function() {
-        form = fixture('basic');
-      });
-
-      test('elements fire an event when attached', function(done) {
-        var element = document.createElement('input', 'simple-element');
-
-        var handler = sinon.spy();
-        form.addEventListener('iron-form-element-register', handler);
-
-        form.appendChild(element);
-        Polymer.Base.async(function() {
-          expect(handler.callCount).to.be.equal(1);
-          done();
-        }, 1);
-      });
-
-      test('elements fire an event when detached', function(done) {
-        var element = document.createElement('input', 'simple-element');
-        form.appendChild(element);
-        element._parentForm = form;
-
-        var handler = sinon.spy();
-        form.addEventListener('iron-form-element-unregister', handler);
-
-        form.removeChild(element);
-        Polymer.Base.async(function() {
-          expect(handler.callCount).to.be.equal(1);
-          done();
-        }, 1);
-      });
-  });
-
-});
+    });
   </script>
 
 </body>
+
 </html>
