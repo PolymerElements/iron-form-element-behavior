@@ -15,7 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   Polymer.IronFormElementBehavior enables a custom element to be included
   in an `iron-form`.
 
-  Empty implementation for Polymer 2.0
+  Events `iron-form-element-register` and `iron-form-element-unregister` are not fired on Polymer 2.0.
 
   @demo demo/index.html
   @polymerBehavior
@@ -23,6 +23,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   Polymer.IronFormElementBehavior = {
 
     properties: {
+      /**
+       * Fired when the element is added to an `iron-form`.
+       *
+       * @event iron-form-element-register
+       */
+
+      /**
+       * Fired when the element is removed from an `iron-form`.
+       *
+       * @event iron-form-element-unregister
+       */
+       
       /**
        * The name of this element.
        */
