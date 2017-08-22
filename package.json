@@ -1,0 +1,24 @@
+{
+  "name": "@polymer/iron-form-element-behavior",
+  "flat": true,
+  "version": "3.0.0-pre.1",
+  "description": "Enables a custom element to be included in an iron-form",
+  "contributors": [
+    "The Polymer Authors"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "form"
+  ],
+  "main": "iron-form-element-behavior.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-form-element-behavior.git"
+  },
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0-pre.1"
+  },
+  "devDependencies": {}
+}
