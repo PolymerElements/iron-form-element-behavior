@@ -30,7 +30,7 @@ declare namespace Polymer {
     /**
      * The value for this element.
      */
-    value: string|null|undefined;
+    value: any;
 
     /**
      * Set to true to mark the input as required. If used in a form, a
