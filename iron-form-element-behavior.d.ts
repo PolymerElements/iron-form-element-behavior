@@ -18,7 +18,7 @@ declare namespace Polymer {
    *
    *   Events `iron-form-element-register` and `iron-form-element-unregister` are not fired on Polymer 2.0.
    *
-   *   
+   *
    */
   interface IronFormElementBehavior {
 
@@ -30,7 +30,7 @@ declare namespace Polymer {
     /**
      * The value for this element.
      */
-    value: any;
+    value: string|number|null|undefined;
 
     /**
      * Set to true to mark the input as required. If used in a form, a
