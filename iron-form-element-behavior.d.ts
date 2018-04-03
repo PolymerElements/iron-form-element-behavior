@@ -18,7 +18,7 @@ declare namespace Polymer {
    *
    *   Events `iron-form-element-register` and `iron-form-element-unregister` are not fired on Polymer 2.0.
    *
-   *
+   *   
    */
   interface IronFormElementBehavior {
 
