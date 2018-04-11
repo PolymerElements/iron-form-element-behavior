@@ -16,7 +16,8 @@ declare namespace Polymer {
    *   Polymer.IronFormElementBehavior enables a custom element to be included
    *   in an `iron-form`.
    *
-   *   Events `iron-form-element-register` and `iron-form-element-unregister` are not fired on Polymer 2.0.
+   *   Events `iron-form-element-register` and `iron-form-element-unregister` are not
+   *   fired on Polymer 2.0.
    *
    *   
    */
