@@ -31,49 +31,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </test-fixture>
 
   <script type="module">
-import { Base } from '@polymer/polymer/polymer-legacy.js';
-import '../iron-form-element-behavior.js';
-import './simple-element.js';
-import './simple-form.js';
-import { PolymerElement } from '@polymer/polymer/polymer-element.js';
-suite('basic', function() {
-  var form;
+    import '../iron-form-element-behavior.js';
+    import './simple-element.js';
+    import './simple-form.js';
 
-  setup(function() {
-    if (PolymerElement)
-      this.skip();
-    form = fixture('basic');
-  });
+    import {PolymerElement} from '@polymer/polymer/polymer-element.js';
+    import {Base} from '@polymer/polymer/polymer-legacy.js';
 
-  test('elements fire an event when attached', function(done) {
-    var element = document.createElement('input', 'simple-element');
+    suite('basic', function() {
+      var form;
 
-    var handler = sinon.spy();
-    form.addEventListener('iron-form-element-register', handler);
+      setup(function() {
+        if (PolymerElement)
+          this.skip();
+        form = fixture('basic');
+      });
 
-    form.appendChild(element);
-    Base.async(function() {
-      expect(handler.callCount).to.be.equal(1);
-      done();
-    }, 1);
-  });
+      test('elements fire an event when attached', function(done) {
+        var element = document.createElement('input', 'simple-element');
 
-  test('elements fire an event when detached', function(done) {
-    var element = document.createElement('input', 'simple-element');
-    form.appendChild(element);
-    element._parentForm = form;
+        var handler = sinon.spy();
+        form.addEventListener('iron-form-element-register', handler);
 
-    var handler = sinon.spy();
-    form.addEventListener('iron-form-element-unregister', handler);
+        form.appendChild(element);
+        Base.async(function() {
+          expect(handler.callCount).to.be.equal(1);
+          done();
+        }, 1);
+      });
 
-    form.removeChild(element);
-    Base.async(function() {
-      expect(handler.callCount).to.be.equal(1);
-      done();
-    }, 1);
-  });
-});
-</script>
+      test('elements fire an event when detached', function(done) {
+        var element = document.createElement('input', 'simple-element');
+        form.appendChild(element);
+        element._parentForm = form;
+
+        var handler = sinon.spy();
+        form.addEventListener('iron-form-element-unregister', handler);
+
+        form.removeChild(element);
+        Base.async(function() {
+          expect(handler.callCount).to.be.equal(1);
+          done();
+        }, 1);
+      });
+    });
+  </script>
 
 </body>
 
