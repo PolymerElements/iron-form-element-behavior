@@ -48,26 +48,3 @@ class SampleElement extends mixinBehaviors([IronFormElementBehavior], PolymerEle
 }
 customElements.define('sample-element', SampleElement);
 ```
-
-## Contributing
-If you want to send a PR to this element, here are
-the instructions for running the tests and demo locally:
-
-### Installation
-```sh
-git clone https://github.com/PolymerElements/iron-form-element-behavior
-cd iron-form-element-behavior
-npm install
-npm install -g polymer-cli
-```
-
-### Running the demo locally
-```sh
-polymer serve --npm
-open http://127.0.0.1:<port>/demo/
-```
-
-### Running the tests
-```sh
-polymer test --npm
-```
