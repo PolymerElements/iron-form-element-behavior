@@ -1,14 +1,3 @@
-[![Build<!---
-This README is automatically generated from the comments in these files:
-iron-button-state.html  iron-control-state.html
-
-Edit those files, and our readme bot will duplicate them over here!
-Edit this file, and the bot will squash your changes :)
-
-The bot does some handling of markdown. Please file a bug if it does the wrong
-thing! https://github.com/PolymerLabs/tedium/issues
--->
-
 [![Published on NPM](https://img.shields.io/npm/v/@polymer/iron-form-element-behavior.svg)](https://www.npmjs.com/package/@polymer/iron-form-element-behavior)
 [![Build status](https://travis-ci.org/PolymerElements/iron-form-element-behavior.svg?branch=master)](https://travis-ci.org/PolymerElements/iron-form-element-behavior)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://webcomponents.org/element/@polymer/iron-form-element-behavior)
