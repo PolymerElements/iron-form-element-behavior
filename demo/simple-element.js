@@ -11,15 +11,19 @@ found at http://polymer.github.io/PATENTS.txt
 import '@polymer/polymer/polymer-legacy.js';
 
 import {Polymer} from '@polymer/polymer/lib/legacy/polymer-fn.js';
-
+import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 import {IronFormElementBehavior} from '../iron-form-element-behavior.js';
 
 Polymer({
-
   is: 'simple-element',
-
-  extends: 'input',
-
+  _template: html`
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <input name="[[name]]" value="{{value}}">
+  `,
   behaviors: [IronFormElementBehavior]
 
 });
