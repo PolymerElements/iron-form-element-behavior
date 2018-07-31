@@ -4,11 +4,11 @@
 
 ## IronFormElementBehavior
 `IronFormElementBehavior` adds a `name`, `value` and `required` properties to
-a custom element. It mostly exists for back compatibility with Polymer 1.x, and
-is probably not something you want to use.
+a custom element. This element is deprecated, and only exists for back compatibility
+with Polymer 1.x (where `iron-form` was a type extension), and
+it is not something you want to use. No contributions or fixes will be accepted.
 
-See: [Documentation](https://www.webcomponents.org/element/@polymer/iron-form-element-behavior),
-  [Demo](https://www.webcomponents.org/element/@polymer/iron-form-element-behavior/demo/demo/index.html).
+See: [Documentation](https://www.webcomponents.org/element/@polymer/iron-form-element-behavior).
 
 ## Usage
 

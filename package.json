@@ -12,7 +12,8 @@
   "name": "@polymer/iron-form-element-behavior",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "webmat": "^0.2.0"
+    "webmat": "^0.2.0",
+    "wct-browser-legacy": "^1.0.1"
   },
   "scripts": {
     "format": "webmat"

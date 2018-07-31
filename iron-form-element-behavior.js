@@ -43,5 +43,9 @@ export const IronFormElementBehavior = {
      * when its value is invalid.
      */
     required: {type: Boolean, value: false},
-  }
+  },
+
+  // Empty implementations for backcompatibility.
+  attached: function() {},
+  detached: function() {}
 };
