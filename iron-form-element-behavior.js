@@ -10,8 +10,6 @@ found at http://polymer.github.io/PATENTS.txt
 */
 import '@polymer/polymer/polymer-legacy.js';
 
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-
 /**
   IronFormElementBehavior adds a `name`, `value` and `required` properties to
   a custom element. It mostly exists for backcompatibility with Polymer 1.x, and
